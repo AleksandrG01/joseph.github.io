@@ -2077,6 +2077,10 @@ button.slick-prev.slick-arrow:after {
   height: 100%;
   background: #00000070;
   z-index: 999999;
+  opacity: 0;
+  -webkit-transform: translate(0, -120%);
+      -ms-transform: translate(0, -120%);
+          transform: translate(0, -120%);
 }
 
 .modal__container {
@@ -2270,9 +2274,10 @@ button.slick-prev.slick-arrow:after {
 
 .modal.active {
   display: block;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .cu-checkbox {
@@ -2846,13 +2851,6 @@ button.slick-prev.slick-arrow:after {
         flex-wrap: wrap;
     display: block;
   }
-
-  .modal__container {
-    padding: 15px;
-    margin: 0 10px;
-    left: 48%;
-    width: 271px;
-  }
 }
 
 @media (max-width: 479.98px) {
@@ -2910,6 +2908,13 @@ button.slick-prev.slick-arrow:after {
 
   .about__slider-for img {
     max-width: 300px;
+  }
+
+  .modal__container {
+    padding: 15px;
+    margin: 0 10px;
+    left: 48%;
+    width: 271px;
   }
 
   .modal__text input {
