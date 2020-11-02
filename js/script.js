@@ -196,6 +196,18 @@ $(document).ready(function () {
       $('body').toggleClass('lock');
    });
 
+
+   $('.popup').click(function () {
+      event.preventDefault();
+      $('.modal').toggleClass('active');
+      $('body').toggleClass('lock');
+   });
+   $('.modal__close').click(function () {
+      event.preventDefault();
+      $('.modal').toggleClass('active');
+      $('body').toggleClass('lock');
+   });
+
 });
 
 
