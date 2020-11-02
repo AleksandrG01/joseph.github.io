@@ -1058,7 +1058,7 @@ body.lock {
   display: block;
   position: absolute;
   right: -45px;
-  top: 0;
+  top: 44px;
   z-index: -1;
 }
 
@@ -1208,6 +1208,10 @@ body.lock {
           transform: translate(-50%, -50%);
 }
 
+.section__title {
+  position: relative;
+}
+
 .section__title h2 {
   font-family: Ubuntu-Regular, sans-serif;
   font-size: 52px;
@@ -1232,6 +1236,37 @@ body.lock {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   top: -16px;
+}
+
+.section__title-programs {
+  position: absolute;
+  right: 98px;
+  bottom: 0;
+}
+
+.section__title-programs a {
+  font-style: normal;
+  position: relative;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #3067D1;
+}
+
+.no-webp .section__title-programs a:before{
+  background: url(../img/right.png) 0 0 no-repeat; }
+
+.section__title-programs a:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  right: -34px;
+  top: 2px;
 }
 
 .training {
@@ -2134,6 +2169,15 @@ button.slick-prev.slick-arrow:after {
   }
 }
 
+@media (max-width: 1146px) {
+  .section__title-programs {
+    position: relative;
+    text-align: center;
+    right: auto;
+    bottom: 22px;
+  }
+}
+
 @media (max-width: 1145px) {
   .icon-menu {
     display: block;
@@ -2628,6 +2672,8 @@ button.slick-prev.slick-arrow:after {
 .webp .first__advantages-text-4:before{ background: url(../img/mp.webp) 0 0 no-repeat; }
 
 .webp .first .help__youtube-img:after{ background: url(../img/play.webp) 0 0 no-repeat; }
+
+.webp .section__title-programs a:before{ background: url(../img/right.webp) 0 0 no-repeat; }
 
 .webp .training:before{ background: url(../img/vw.webp) 0 0 no-repeat; }
 
