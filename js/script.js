@@ -213,22 +213,22 @@ $(document).ready(function () {
 
 $('.training__items').slick({
   slidesToShow: 4,
-   responsive: [{
-         breakpoint: 768,
+  responsive: [{
+      breakpoint: 1840,
+        settings: {
+           centerMode: true,
+           centerPadding: '10px',
+           adaptiveHeight: true,
+           slidesToShow: 2
+        }
+     },
+        {
+      breakpoint: 768,
          settings: {
             centerMode: true,
             centerPadding: '40px',
             adaptiveHeight: true,
             slidesToShow: 1
-         }
-      },
-      {
-         breakpoint: 1440,
-         settings: {
-            centerMode: true,
-            centerPadding: '10px',
-            adaptiveHeight: true,
-            slidesToShow: 2
          }
       },
       {
@@ -294,7 +294,39 @@ $(".ansvers__item").hover(
 );
 
 
+ymaps.ready(function () {
+   var myMap = new ymaps.Map('map', {
+           center: [57.817960, 28.335505],
+           zoom: 13
+       }, {
+           searchControlProvider: 'yandex#search'
+       }),
 
+       // Создаём макет содержимого.
+       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+       ),
+
+       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+           hintContent: 'Школа английского языка - Joseph english school',
+           balloonContent: ''
+       }, {
+           // Опции.
+           // Необходимо указать данный тип макета.
+           iconLayout: 'default#image',
+           // Своё изображение иконки метки.
+           iconImageHref: 'img/pin.png',
+           // Размеры метки.
+           iconImageSize: [60, 77],
+           // Смещение левого верхнего угла иконки относительно
+           // её "ножки" (точки привязки).
+           iconImageOffset: [-5, -38]
+       });
+
+   myMap.geoObjects
+       .add(myPlacemark)
+       .add(myPlacemarkWithContent);
+});
 const animItems = document.querySelectorAll('._anim-items');
 if (animItems.length > 0) {
    window.addEventListener('scroll', animOnScroll);
